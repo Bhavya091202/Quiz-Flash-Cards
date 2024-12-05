@@ -26,10 +26,10 @@ const App = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`https://opentdb.com/api.php?category=${amountEl.current.value}&amount=${categoryEl.current.value}`)
+        fetch(`https://opentdb.com/api.php?amount=${amountEl.current.value}&category=${categoryEl.current.value}`)
         .then(res => res.json())
         .then(data => {
-            // console.log(data);  // Check the entire structure
+            // console.log(data);  
             setFlashCards(
                 data.results.map(
                     (questionItem, index) => {
